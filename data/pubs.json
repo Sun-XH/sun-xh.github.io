@@ -1,22 +1,5 @@
 [
     {
-        "name": "Articulated 3D Human-Object Interactions from RGB Videos: An Empirical Analysis of Approaches and Challenges",
-        "image": "files/articulated-3DHOI.png",
-        "authors": [
-            "Sanjay Haresh",
-            "Xiaohao Sun",
-            "Hanxiao Jiang",
-            "Angel X. Chang",
-            "Manolis Savva"
-        ],
-        "conference": "3DV 2022",
-        "special": "",
-        "description": "Human-object interactions with articulated objects are common in everyday life. Despite much progress in single-view 3D reconstruction, it is still challenging to infer an articulated 3D object model from an RGB video showing a person manipulating the object. We canonicalize the task of articulated 3D human-object interaction reconstruction from RGB video, and carry out a systematic benchmark of four methods for this task: 3D plane estimation, 3D cuboid estimation, CAD model fitting, and free-form mesh fitting. Our experiments show that all methods struggle to obtain high accuracy results even when provided ground truth information about the observed objects. We identify key factors which make the task challenging and suggest directions for future work on this challenging 3D computer vision task.",
-        "paper": "",
-        "project": "",
-        "code": ""
-    },
-    {
         "name": "OPD: Single-view 3D Openable Part Detection",
         "image": "files/opd.png",
         "authors": [
@@ -33,25 +16,20 @@
         "code": "https://github.com/3dlg-hcvc/OPD"
     },
     {
-        "name": "Motion Annotation Programs: A Scalable Approach to Annotating Kinematic Articulations in Large 3D Shape Collections",
-        "image": "files/MAP.png",
+        "name": "Articulated 3D Human-Object Interactions from RGB Videos: An Empirical Analysis of Approaches and Challenges",
+        "image": "files/articulated-3DHOI.png",
         "authors": [
-            "Xianghao Xu",
-            "David Charatan",
-            "Sonia Raychaudhuri",
+            "Sanjay Haresh",
+            "Xiaohao Sun",
             "Hanxiao Jiang",
-            "Mae Heitmann",
-            "Vladimir Kim",
-            "Siddhartha Chaudhuri",
-            "Manolis Savva",
             "Angel X. Chang",
-            "Daniel Ritchie"
+            "Manolis Savva"
         ],
-        "conference": "3DV 2020",
+        "conference": "3DV 2022",
         "special": "",
-        "description": "We present a system that helps individual expert users rapidly annotate kinematic motions in large 3D shape collections. The organizing concept of our system is motion annotation programs: simple, re-usable procedural rules that generate motion for a given input shape.",
-        "paper": "http://visual.cs.brown.edu/projects/articulations-webpage/articulations_3dv2020.pdf",
-        "project": "https://visual.cs.brown.edu/articulations",
+        "description": "Human-object interactions with articulated objects are common in everyday life. Despite much progress in single-view 3D reconstruction, it is still challenging to infer an articulated 3D object model from an RGB video showing a person manipulating the object. We canonicalize the task of articulated 3D human-object interaction reconstruction from RGB video, and carry out a systematic benchmark of four methods for this task: 3D plane estimation, 3D cuboid estimation, CAD model fitting, and free-form mesh fitting. Our experiments show that all methods struggle to obtain high accuracy results even when provided ground truth information about the observed objects. We identify key factors which make the task challenging and suggest directions for future work on this challenging 3D computer vision task.",
+        "paper": "",
+        "project": "",
         "code": ""
     },
     {
@@ -77,6 +55,28 @@
         "description": "Building home assistant robots has long been a pursuit for vision and robotics researchers. To achieve this task, a simulated environment with physically realistic simulation, sufficient articulated objects, and transferability to the real robot is indispensable. Existing environments achieve these requirements for robotics simulation with different levels of simplification and focus. We take one step further in constructing an environment that supports household tasks for training robot learning algorithm. Our work, SAPIEN, is a realistic and physics-rich simulated environment that hosts a large-scale set for articulated objects. Our SAPIEN enables various robotic vision and interaction tasks that require detailed part-level understanding.We benchmark state-of-the-art vision algorithms for part detection and motion attribute recognition as well as demonstrate robotic interaction tasks using heuristic approaches and reinforce- ment learning algorithms. We hope that our SAPIEN can open a lot of research directions yet to be explored, in- cluding learning cognition through interaction, part motion discovery, and construction of robotics-ready simulated game environment.",
         "paper": "https://arxiv.org/abs/2003.08515",
         "project": "http://sapien.ucsd.edu/publication",
+        "code": ""
+    },
+    {
+        "name": "Motion Annotation Programs: A Scalable Approach to Annotating Kinematic Articulations in Large 3D Shape Collections",
+        "image": "files/MAP.png",
+        "authors": [
+            "Xianghao Xu",
+            "David Charatan",
+            "Sonia Raychaudhuri",
+            "Hanxiao Jiang",
+            "Mae Heitmann",
+            "Vladimir Kim",
+            "Siddhartha Chaudhuri",
+            "Manolis Savva",
+            "Angel X. Chang",
+            "Daniel Ritchie"
+        ],
+        "conference": "3DV 2020",
+        "special": "",
+        "description": "We present a system that helps individual expert users rapidly annotate kinematic motions in large 3D shape collections. The organizing concept of our system is motion annotation programs: simple, re-usable procedural rules that generate motion for a given input shape.",
+        "paper": "http://visual.cs.brown.edu/projects/articulations-webpage/articulations_3dv2020.pdf",
+        "project": "https://visual.cs.brown.edu/articulations",
         "code": ""
     },
     {
