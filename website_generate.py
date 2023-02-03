@@ -75,7 +75,7 @@ def parsePubs(segments):
     all_pubs = []
     for pub in segments["pubs"]:
         info = {}
-        info["image"] = [f"<a href=\"#\"><img src={pub['image']} alt=\"Articulated 3D Human-Object Interactions from RGB Videos: An Empirical Analysis of Approaches and Challenges\" class=\"img-responsive\" style=\"width: 300px;\" /></a>"]
+        info["image"] = [f"<a href=\"#\"><img src={pub['image']} alt=\"image\" class=\"img-responsive\" style=\"width: 300px;\" /></a>"]
         content = []
         content.append(f"<h4 class=\"red\">{pub['name']}</h4>")
         index = 0
