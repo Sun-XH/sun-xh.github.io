@@ -1,36 +1,19 @@
 [
     {
-        "name": "MultiScan: Scalable RGBD scanning for 3D environments with articulated objects",
-        "image": "files/multiscan.png",
+        "name": "OPDMulti: Openable Part Detection for Multiple Objects",
+        "image": "files/opdmulti.png",
         "authors": [
-            "Yongsen Mao",
-            "Yiming Zhang",
-            "Hanxiao Jiang",
+            "Xiaohao Sun*",
+            "Hanxiao Jiang*",
             "Angel X. Chang",
             "Manolis Savva"
         ],
-        "conference": "NeurIPS 2022",
+        "conference": "arXiv",
         "special": "",
-        "description": "We introduce MultiScan, a scalable RGBD dataset construction pipeline leveraging commodity mobile devices to scan indoor scenes with articulated objects and web-based semantic annotation interfaces to efficiently annotate object and part semantics and part mobility parameters. We use this pipeline to collect 230 scans of 108 indoor scenes containing 9458 objects and 4331 parts. The resulting MultiScan dataset provides RGBD streams with per-frame camera poses, textured 3D surface meshes, richly annotated part-level and object-level semantic labels, and part mobility parameters. We validate our dataset on instance segmentation and part mobility estimation tasks and benchmark methods for these tasks from prior work. Our experiments show that part segmentation and mobility estimation in real 3D scenes remain challenging despite recent progress in 3D object segmentation.",
-        "paper": "https://openreview.net/pdf?id=YxUdazpgweG",
-        "project": "https://3dlg-hcvc.github.io/multiscan/#/",
-        "code": "https://github.com/smartscenes/multiscan"
-    },
-    {
-        "name": "OPD: Single-view 3D Openable Part Detection",
-        "image": "files/opd.png",
-        "authors": [
-            "Hanxiao Jiang",
-            "Yongsen Mao",
-            "Manolis Savva",
-            "Angel X. Chang"
-        ],
-        "conference": "ECCV 2022",
-        "special": "oral",
-        "description": "We address the task of predicting what parts of an object can open and how they move when they do so. The input is a single image of an object, and as output we detect what parts of the object can open, and the motion parameters describing the articulation of each openable part. To tackle this task, we create two datasets of 3D objects: OPDSynth based on existing synthetic objects, and OPDReal based on RGBD reconstructions of real objects. We then design OPDRCNN, a neural architecture that detects openable parts and predicts their motion parameters. Our experiments show that this is a challenging task especially when considering generalization across object categories, and the limited amount of information in a single image. Our architecture outperforms baselines and prior work especially for RGB image inputs.",
-        "paper": "https://arxiv.org/pdf/2203.16421.pdf",
-        "project": "https://3dlg-hcvc.github.io/OPD/",
-        "code": "https://github.com/3dlg-hcvc/OPD"
+        "description": "Openable part detection is the task of detecting the openable parts of an object in a single-view image, and predicting corresponding motion parameters. Prior work investigated the unrealistic setting where all input images only contain a single openable object. We generalize this task to scenes with multiple objects each potentially possessing openable parts, and create a corresponding dataset based on real-world scenes. We then address this more challenging scenario with OPDFormer: a part-aware transformer architecture. Our experiments show that the OPDFormer architecture significantly outperforms prior work. The more realistic multiple-object scenarios we investigated remain challenging for all methods, indicating opportunities for future work.",
+        "paper": "https://arxiv.org/abs/2303.14087",
+        "project": "https://3dlg-hcvc.github.io/OPDMulti/",
+        "code": "https://github.com/3dlg-hcvc/OPDMulti"
     },
     {
         "name": "Articulated 3D Human-Object Interactions from RGB Videos: An Empirical Analysis of Approaches and Challenges",
@@ -50,66 +33,32 @@
         "code": "https://github.com/3dlg-hcvc/3dhoi"
     },
     {
-        "name": "SAPIEN: A SimulAted Part-based Interactive ENvironment",
-        "image": "files/sapien.png",
+        "name": "Reading Line Classification Using Eye-trackers",
+        "image": "files/read_line.png",
         "authors": [
-            "Fanbo Xiang",
-            "Yuzhe Qin",
-            "Kaichun Mo",
-            "Yikuan Xia",
-            "Hao Zhu",
-            "Fangchen Liu",
-            "Minghua Liu",
-            "Hanxiao Jiang",
-            "Yifu Yuan",
-            "He Wang",
-            "Angel X. Chang",
-            "Leonidas J. Guibas",
-            "Hao Su"
+            "Xiaohao Sun",
+            "Balakumar Balasingam"
         ],
-        "conference": "CVPR 2020",
-        "special": "oral",
-        "description": "Building home assistant robots has long been a pursuit for vision and robotics researchers. To achieve this task, a simulated environment with physically realistic simulation, sufficient articulated objects, and transferability to the real robot is indispensable. Existing environments achieve these requirements for robotics simulation with different levels of simplification and focus. We take one step further in constructing an environment that supports household tasks for training robot learning algorithm. Our work, SAPIEN, is a realistic and physics-rich simulated environment that hosts a large-scale set for articulated objects. Our SAPIEN enables various robotic vision and interaction tasks that require detailed part-level understanding.We benchmark state-of-the-art vision algorithms for part detection and motion attribute recognition as well as demonstrate robotic interaction tasks using heuristic approaches and reinforcement learning algorithms. We hope that our SAPIEN can open a lot of research directions yet to be explored, including learning cognition through interaction, part motion discovery, and construction of robotics-ready simulated game environment.",
-        "paper": "https://arxiv.org/abs/2003.08515",
-        "project": "http://sapien.ucsd.edu/publication",
-        "code": ""
-    },
-    {
-        "name": "Motion Annotation Programs: A Scalable Approach to Annotating Kinematic Articulations in Large 3D Shape Collections",
-        "image": "files/MAP.png",
-        "authors": [
-            "Xianghao Xu",
-            "David Charatan",
-            "Sonia Raychaudhuri",
-            "Hanxiao Jiang",
-            "Mae Heitmann",
-            "Vladimir Kim",
-            "Siddhartha Chaudhuri",
-            "Manolis Savva",
-            "Angel X. Chang",
-            "Daniel Ritchie"
-        ],
-        "conference": "3DV 2020",
+        "conference": "IEEE TIM",
         "special": "",
-        "description": "We present a system that helps individual expert users rapidly annotate kinematic motions in large 3D shape collections. The organizing concept of our system is motion annotation programs: simple, re-usable procedural rules that generate motion for a given input shape.",
-        "paper": "http://visual.cs.brown.edu/projects/articulations-webpage/articulations_3dv2020.pdf",
-        "project": "https://visual.cs.brown.edu/articulations",
+        "description": "Eye-tracking while reading is an emerging application where the goal is to track the progression of reading. The challenges for accurate tracking of the reading progression are due to the measurement noise of the eye-tracker and the rapid and uncertain movement of the eye gaze. Solutions to this problem developed in the recent past suffer from many limitations, such as the need to know the text context and the need to have a batch of one page of data for classification. In this article, we relax these assumptions and develop a novel, real-time line classification approach. The proposed solution consists of an improved slip-Kalman smoother (slip-KS) that is designed to detect new line returns and to reduce the variance in the eye-gaze measurements. After preprocessing of the data by the slip-KS, a classification approach is employed to track the lines being read in real-time. Two such classifiers are demonstrated in this article; one is based on Gaussian discriminants, and the other is based on support vector machines. The proposed approaches were tested using realistic eye-gaze data from seven participants. Analysis based on the collected data using the proposed algorithms shows significantly improved performance over existing methods.",
+        "paper": "https://ieeexplore.ieee.org/document/9475049",
+        "project": "",
         "code": ""
     },
     {
-        "name": "Evaluating Colour Constancy on the new MIST dataset of Multi-Illuminant Scenes",
-        "image": "files/color_constancy.png",
+        "name": "Algorithms for Reading Line Classification",
+        "image": "files/KS.png",
         "authors": [
-            "Xiangpeng Hao",
-            "Brian Funt",
-            "Hanxiao Jiang"
+            "Xiaohao Sun",
+            "Balakumar Balasingam"
         ],
-        "conference": "CIC 2019",
-        "special": "oral",
-        "description": "A new image test set of synthetically generated, full-spectrum images with pixelwise ground truth has been developed to aid in the evaluation of illumination estimation methods for colour constancy. The performance of 9 illumination methods is reported for this dataset along and compared to the optimal single-illuminant estimate. None of the methods specifically designed to handle multi-illuminant scenes is found to perform any better than the optimal single-illuminant case based on completely uniform illumination.",
-        "paper": "https://www2.cs.sfu.ca/~funt/Hao+Funt_MIST_CIC27_2019.pdf",
+        "conference": "IEEE SMC",
+        "special": "",
+        "description": "Eye-Tracking has been emerging as a useful tool in human-computer interaction. However, the state of the art in eye-tracking applications suffers from a significant amount of measurement noise. Also, the inherent nature of the eye-gaze movement adds to the difficulty of obtaining valuable information from eye-gaze measurements. In this paper, a novel classification approach is proposed to classify the lines being read based on eye-gaze measurements. The proposed approach consists of a novel Kalman smoother-based preprocessing procedure to separate eye-gaze data corresponding to different text lines and to reduce variance. The preprocessed data is then used to train two different classifiers, one based on Gaussian discriminants and the other based on support vector machines. The resulting line-classification approach is shown to be superior in performance compared to other recent approaches.",
+        "paper": "https://ieeexplore.ieee.org/abstract/document/9658688",
         "project": "",
         "code": ""
     }
-    
+
 ]
