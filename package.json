@@ -1,0 +1,15 @@
+{
+  "name": "sun-xh-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build && node scripts/copy-static-assets.mjs",
+    "preview": "astro preview --host 0.0.0.0",
+    "publish:root": "node scripts/publish-root.mjs"
+  },
+  "devDependencies": {
+    "astro": "^6.3.1"
+  }
+}

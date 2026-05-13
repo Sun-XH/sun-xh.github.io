@@ -1,0 +1,19 @@
+---
+import NewsList from "../components/NewsList.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { news } from "../data/site";
+---
+
+<BaseLayout title="News | Xiaohao Sun" activePath="news.html">
+  <section class="shell page-heading compact-heading">
+    <p class="eyebrow">Updates</p>
+    <h1>News</h1>
+  </section>
+  <section class="shell section-block">
+    <div class="panel wide-panel">
+      <SectionHeading title="All News" />
+      <NewsList items={news} />
+    </div>
+  </section>
+</BaseLayout>

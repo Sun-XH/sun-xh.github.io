@@ -1,0 +1,24 @@
+---
+import SectionHeading from "../components/SectionHeading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { profile } from "../data/site";
+---
+
+<BaseLayout title="Contact | Xiaohao Sun" activePath="contact.html">
+  <section class="shell page-heading compact-heading">
+    <p class="eyebrow">Contact Details</p>
+    <h1>Contact</h1>
+  </section>
+  <section class="shell contact-grid">
+    <div class="panel contact-panel">
+      <SectionHeading title="Contact Information" />
+      <p>{profile.name}</p>
+      <p><a href={profile.emailHref}>E-mail</a></p>
+      {profile.links.map((link) => <p><a href={link.href} target="_blank" rel="noreferrer">{link.label}</a></p>)}
+    </div>
+    <div class="panel contact-panel">
+      <SectionHeading title="Lab Location" />
+      {profile.location.map((line) => <p>{line}</p>)}
+    </div>
+  </section>
+</BaseLayout>

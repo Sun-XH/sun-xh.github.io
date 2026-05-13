@@ -1,0 +1,20 @@
+---
+import PublicationCard from "../components/PublicationCard.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { publications } from "../data/site";
+---
+
+<BaseLayout title="Publications | Xiaohao Sun" activePath="pubs.html">
+  <section class="shell page-heading">
+    <p class="eyebrow">Research</p>
+    <h1>Publications</h1>
+    <p>Selected papers and projects in 3D vision, generative models, and eye-tracking.</p>
+  </section>
+  <section class="shell section-block">
+    <SectionHeading title="All Publications" />
+    <div class="publication-list">
+      {publications.map((publication) => <PublicationCard publication={publication} />)}
+    </div>
+  </section>
+</BaseLayout>

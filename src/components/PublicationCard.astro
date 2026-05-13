@@ -1,0 +1,42 @@
+---
+import type { Publication } from "../data/site";
+
+type Props = {
+  publication: Publication;
+  compact?: boolean;
+};
+
+const { publication, compact = false } = Astro.props;
+const isWideTeaser = publication.imageShape === "wide";
+---
+
+<article class:list={["publication-card", { compact, "wide-teaser": isWideTeaser }]}>
+  <a class="publication-image" href={publication.links[0]?.href || publication.venue.href} target="_blank" rel="noreferrer" aria-label={`${publication.title} paper or project`}>
+    <img src={publication.image} alt={`${publication.title} preview`} loading="lazy" />
+  </a>
+  <div class="publication-body">
+    <div class="publication-meta">
+      <a class="venue" href={publication.venue.href} target="_blank" rel="noreferrer">{publication.venue.label}</a>
+      {publication.venue.note && <span class="badge">{publication.venue.note}</span>}
+    </div>
+    <h3>{publication.title}</h3>
+    <p class="authors">
+      {publication.authors.map((author, index) => (
+        <>
+          {author.href ? (
+            <a class:list={[{ me: author.me }]} href={author.href} target="_blank" rel="noreferrer">{author.name}</a>
+          ) : (
+            <span class:list={[{ me: author.me }]}>{author.name}</span>
+          )}
+          {index < publication.authors.length - 1 ? ", " : ""}
+        </>
+      ))}
+    </p>
+    {!compact && <p class="publication-description">{publication.description}</p>}
+    <div class="publication-links">
+      {publication.links.map((link) => (
+        <a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+      ))}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+import SiteHeader from "../components/SiteHeader.astro";
+import { analyticsId, googleSiteVerification, profile } from "../data/site";
+
+type Props = {
+  title?: string;
+  description?: string;
+  activePath?: string;
+};
+
+const {
+  title = profile.title,
+  description = "Xiaohao Sun, Ph.D. student at Simon Fraser University working on 3D vision and language, generative models, and artificial intelligence.",
+  activePath = Astro.url.pathname
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="google-site-verification" content={googleSiteVerification} />
+    <meta name="generator" content="Astro" />
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <SiteHeader activePath={activePath} />
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <span>{profile.title}</span>
+        <span>{profile.affiliation}</span>
+      </div>
+    </footer>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${analyticsId}`}></script>
+    <script define:vars={{ analyticsId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", analyticsId);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+---
+import EducationList from "../components/EducationList.astro";
+import NewsList from "../components/NewsList.astro";
+import ProfileIntro from "../components/ProfileIntro.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { education, news } from "../data/site";
+---
+
+<BaseLayout title="About | Xiaohao Sun" activePath="about.html">
+  <ProfileIntro />
+  <section class="shell split-section">
+    <div class="panel news-panel">
+      <SectionHeading eyebrow="Updates" title="News" />
+      <NewsList items={news} />
+    </div>
+    <div class="panel education-panel">
+      <SectionHeading title="Education" />
+      <EducationList items={education} />
+    </div>
+  </section>
+</BaseLayout>

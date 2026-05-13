@@ -1,0 +1,39 @@
+---
+import NewsList from "../components/NewsList.astro";
+import ProfileIntro from "../components/ProfileIntro.astro";
+import PublicationCard from "../components/PublicationCard.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { news, publications } from "../data/site";
+---
+
+<BaseLayout activePath="index.html">
+  <ProfileIntro />
+
+  <section class="shell split-section">
+    <div class="panel news-panel">
+      <SectionHeading eyebrow="Updates" title="News" href="news.html" linkLabel="All news" />
+      <NewsList items={news.slice(0, 6)} />
+    </div>
+    <div class="panel focus-panel">
+      <img class="focus-icon" src="files/rep-icon.png" alt="" aria-hidden="true" />
+      <p class="eyebrow">Current Focus</p>
+      <h2>3D scene understanding, synthesis, and embodied AI</h2>
+      <p class="focus-description">
+        Building generative and perception models that help agents understand, create, and act in realistic 3D environments.
+      </p>
+      <div class="focus-tags" aria-label="Research focus areas">
+        <span>3D scenes</span>
+        <span>Generative models</span>
+        <span>Embodied AI</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="shell section-block">
+    <SectionHeading eyebrow="Research" title="Selected Publications" href="pubs.html" linkLabel="All publications" />
+    <div class="publication-list">
+      {publications.slice(0, 3).map((publication) => <PublicationCard publication={publication} compact />)}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+import type { NewsItem } from "../data/site";
+
+type Props = {
+  items: NewsItem[];
+};
+
+const { items } = Astro.props;
+---
+
+<ol class="news-list">
+  {items.map((item) => (
+    <li>
+      <time>{item.date}</time>
+      <span set:html={item.html} />
+    </li>
+  ))}
+</ol>

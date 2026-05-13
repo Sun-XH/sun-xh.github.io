@@ -1,0 +1,18 @@
+---
+import EducationList from "../components/EducationList.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { education, profile } from "../data/site";
+---
+
+<BaseLayout title="Experience | Xiaohao Sun" activePath="experience.html">
+  <section class="shell page-heading">
+    <p class="eyebrow">Background</p>
+    <h1>Experience</h1>
+    <p set:html={profile.bioHtml} />
+  </section>
+  <section class="shell section-block">
+    <SectionHeading title="Education" />
+    <EducationList items={education} />
+  </section>
+</BaseLayout>

@@ -1,0 +1,30 @@
+---
+import { navItems, profile } from "../data/site";
+
+type Props = {
+  activePath: string;
+};
+
+const { activePath } = Astro.props;
+const normalize = (path: string) => path.replace(/^\//, "").replace(/^$/, "index.html").replace(/\/$/, "index.html");
+const currentPath = normalize(activePath || "index.html");
+---
+
+<header class="site-header">
+  <nav class="shell nav-bar" aria-label="Primary navigation">
+    <a class="brand" href="index.html" aria-label="Xiaohao Sun home">
+      <span class="brand-mark">XS</span>
+      <span>
+        <strong>{profile.name}</strong>
+        <small>{profile.role}</small>
+      </span>
+    </a>
+    <div class="nav-links">
+      {navItems.map((item) => (
+        <a href={item.href} class:list={[{ active: normalize(item.href) === currentPath }]}>
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </nav>
+</header>

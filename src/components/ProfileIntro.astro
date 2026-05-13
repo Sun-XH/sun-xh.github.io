@@ -1,0 +1,41 @@
+---
+import { profile } from "../data/site";
+---
+
+<section class="hero shell">
+  <div class="hero-copy">
+    <p class="eyebrow">3D Vision · Generative Models · AI</p>
+    <h1>{profile.name} <span>{profile.nativeName}</span></h1>
+    <p class="tagline">{profile.tagline}</p>
+    <p class="bio" set:html={profile.bioHtml} />
+    <div class="hero-actions" aria-label="Profile links">
+      <a class="button primary" href="pubs.html">
+        <img class="button-icon" src="files/icons/book-open.svg" alt="" aria-hidden="true" />
+        View Publications
+      </a>
+      {profile.links.map((link) => (
+        <a class="button icon-button" href={link.href} target="_blank" rel="noreferrer" aria-label={link.label} title={link.label}>
+          <img class="button-icon" src={link.icon} alt="" aria-hidden="true" />
+        </a>
+      ))}
+    </div>
+  </div>
+  <aside class="profile-card" aria-label="Profile summary">
+    <img class="portrait" src={profile.portrait} alt={profile.name} width="320" height="343" />
+    <div class="profile-meta">
+      <strong>{profile.role}</strong>
+      <span>{profile.period}</span>
+      <a href={profile.affiliationHref} target="_blank" rel="noreferrer">{profile.affiliation}</a>
+      <span>
+        Research Assistant (
+        {profile.labLinks.map((link, index) => (
+          <>
+            <a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>{index < profile.labLinks.length - 1 ? " & " : ""}
+          </>
+        ))}
+        )
+      </span>
+      <a class="email" href={profile.emailHref}>{profile.emailDisplay}</a>
+    </div>
+  </aside>
+</section>
